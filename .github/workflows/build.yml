@@ -109,6 +109,8 @@ jobs:
             cmake.exe -G"MinGW Makefiles" ^
             -DCMAKE_BUILD_TYPE=Release ^
             -DBUILD_SHARED_LIBS=OFF ^
+            -DMAGIC_ENUM_OPT_BUILD_TESTS=OFF ^
+            -DMAGIC_ENUM_OPT_BUILD_EXAMPLES=OFF ^
             -DCMAKE_INSTALL_PREFIX="cmake-build/${{ env.cmakeInstallationPath }}" -B./cmake-build &&^
             cd cmake-build && ( cmake --build . --config Release && cmake --install .  || type .\CMakeFiles\CMakeError.log )  
  
